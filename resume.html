@@ -1,182 +1,153 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
-    <title>MrMarrant</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            background-color: black;
-        }
-        .bordered-div {
-            border: 20px solid #808080;
-            box-sizing: border-box;
-            width: 80%;
-            height: 98%;
-            margin-left: 10px;
-            border-radius: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #808080;
-        }
-        .content {
-            color: white;
-            width: 100%;
-            height: 100%;
-            overflow-y: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .content img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .right-div {
-            width: 20%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .inner-div {
-            background-color: #808080;
-            border-radius: 30px;
-            width: 70%;
-            height: 98%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .inner-bordered-div {
-            border: 5px solid black;
-            border-radius: 30px;
-            width: 90%;
-            height: 98%;
-        }
-        .new-inner-div {
-            border: 10px solid #898989;
-            border-radius: 10px;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #fee504;
-        }
-        .side-panel {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .button-control {
-            appearance: none;
-            background-color: #FFFFFF;
-            border-radius: 40em;
-            border-style: none;
-            box-shadow: #ADCFFF 0 -12px 6px inset;
-            box-sizing: border-box;
-            color: #000000;
-            cursor: pointer;
-            display: inline-block;
-            font-family: -apple-system,sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: -.24px;
-            margin: 10px;
-            outline: none;
-            padding: 1rem 1.2rem;
-            quotes: auto;
-            text-align: center;
-            text-decoration: none;
-            transition: all .15s;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
-        }
+  <meta charset="UTF-8">
+  <title>Retro Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html, body {
+      background-color: #1a1813;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-        .button-control:hover {
-            background-color: #FFC229;
-            box-shadow: #FF6314 0 -6px 8px inset;
-            transform: scale(1.1);
-        }
+    .tv-frame {
+      background-color: #333;
+      border: 20px solid #777;
+      border-radius: 30px;
+      padding: 10px;
+      display: flex;
+      height: 100vh;
+      width: 100%;
+      margin: auto;
+    }
 
-        .button-control:active {
-            transform: scale(1.025);
-        }
+    .screen {
+      flex: 1;
+      background-color: #fee504;
+      border-radius: 10px;
+      overflow-y: scroll;
+      perspective: 1000px;
+      padding: 20px;
+    }
 
-        @media (min-width: 768px) {
-        .button-control {
-            font-size: 1.1rem;
-            padding: .75rem 1.5rem;
-        }
-        }
-        .led {
-            background-color: #03d703;
-            box-shadow: #00c308 0 -12px 6px inset;
-            padding: .75rem .75rem;
-            align-self: flex-end;
-            margin-bottom: 50px;
-        }
-        .led:hover {
-            background-color: #03d703;
-            box-shadow: #00c308 0 -12px 6px inset;
-            transform: scale(1.055);
-        }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const img = document.querySelector('.static-img');
-            const body = document.body;
+    .screen-content {
+      color: #313131;
+      transform-origin: top center;
+      transition: transform 0.1s ease-out;
+      font-size: larger;
+    }
 
-            body.style.visibility = 'hidden';
+    .screen-content h1, .screen-content p {
+      margin-bottom: 2rem;
+    }
 
-            img.addEventListener('load', function() {
-                body.style.visibility = 'visible';
-            });
+    .screen-content img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
 
-            const ledButton = document.querySelector('.button-control.led');
-            ledButton.addEventListener('click', function() {
-                window.open('file:///C:/Users/mnsgi/OneDrive/Bureau/Si%20tu%20ouvres,%20je%20te%20tue/mrmarrant_website/home.html', "_self");
-            });
+    .control-panel {
+      width: 120px;
+      background-color: #555;
+      margin-left: 15px;
+      border-radius: 20px;
+      padding: 15px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-            const resumeButton = document.querySelector('.button-control.resume');
-            resumeButton.addEventListener('click', function() {
-                window.open('file:///C:/Users/mnsgi/OneDrive/Bureau/Si%20tu%20ouvres,%20je%20te%20tue/mrmarrant_website/resume.html', "_self");
-            });
-        });
-    </script>
+    .btn-custom {
+      width: 100%;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      border-radius: 20px;
+      padding: 10px 0;
+      margin: 10px 0;
+    }
+
+    .indicator {
+      align-self: flex-end;
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      border-radius: 50%;
+      background-color: green;
+    }
+
+    .screen::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+
+    .header-resume {
+      display: flex;
+    }
+  </style>
 </head>
 <body>
-    <div class="bordered-div">
-        <div class="new-inner-div">
-            <div class="content">
-                <img class="hesmile-img" src="https://i.imgur.com/R4pPwG9.png" alt="MrMarrant GIF">
-            </div>
+
+<div class="tv-frame">
+  <div class="screen" id="screen">
+    <div class="screen-content" id="screenContent">
+      <img style="margin-bottom: 100px;" src="assets/images/mrmarrant_face.png" alt="Resume">
+      <div class="header-resume">
+        <img style="width: 20%; height: 20%; margin-right: 20px;" src="assets/images/mrmarrant_tv.png" alt="Header Resume">
+        <h1 style="align-content: center;">
+          <b>I hope you laughed</b><br>
+          <b style="color: #000000;">Thank you for laughing with us.</b>
+        </h1>
+      </div>
+      <section>
+        <h1>
+          <b>Hey</b>
+        </h1>
+        <p>Je me présente, MrMarrant, bienvenu sur cette émission qui aura pour principal sujet ... Moi.<br>
+          Ca fait un peu égocentrique, mais j’ai le souhait de partager ce que je fait ainsi que mes passions.<br>
+          Bien, alors passons à moi même, Je suis un jeune adulte en pleine santé qui se passionne dans l’art du jeu vidéo.<br><br>
+          
+          Encore aujourd’hui, le jeu vidéo est pour beaucoup relégué à une simple activité pour passer le temps ou voir est carrément méprisé. <br>
+          Pourtant, un jeu peut rassembler quasiment tout les arts existants, allant de la musique, le cinéma, l’écriture, même la sculpture ou la peinture peuvent y être représenté.</p>
+      </section>
+
+      <section style="display: flex;">
+        <div>
+          <h1>
+            <b>On parlais de quoi déjà ?</b>
+          </h1>
+          <p>Ah oui, de moi.<br>
+  
+            J'ai commencé à étudier la médecine, et la vie étant parfois très étrange, j'ai fini par travailler sur le Web le jour et modder des clowns la nuit.<br><br>
+            
+            Aujourd’hui je suis un développeur fullstack spécialisé dans<br>
+            le web, j’ai travaillé sur pas mal de projets différents, que ça soit pour l’armée, un aquarium ou pour une région française.<br><br>
+            
+            Et en ce moment j'essaye de developper des jeux quand j'ai le temps, vous pourrez les retrouver sur la page projets.<br><br>
+            
+            Je débute encore dans ce domaine et je me cherche un peu sur les thèmes et ma signature unique n’hésitez pas à consulter mes publications actuelles sur Itch.io<br><br>
+            
+            Ça sera tout, merci d'avoir écouté cette émission et n'oubliez pas de rire.</p>
         </div>
+        <img style="width: 20%; height: 20%; margin-right: 20px; align-self: center;" src="assets/images/pablo_face.png" alt="Pablo Face">
+      </section>
     </div>
-    <div class="right-div">
-        <div class="inner-div">
-            <div class="inner-bordered-div">
-                <div class="side-panel">
-                    <div class="button-control led"></div>
-                    <div class="button-control resume">Resume</div>
-                    <div class="button-control projects">Projects</div>
-                    <div class="button-control links">Links</div>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
+
+  <div class="control-panel">
+    <button class="btn btn-custom indicator"></button>
+    <button class="btn btn-custom">Resume</button>
+    <button class="btn btn-custom">Projects</button>
+    <button class="btn btn-custom">Links</button>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

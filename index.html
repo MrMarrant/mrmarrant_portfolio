@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Retro Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html, body {
+      background-color: #1a1813;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .tv-frame {
+      background-color: #333;
+      border: 20px solid #777;
+      border-radius: 30px;
+      padding: 10px;
+      display: flex;
+      height: 100vh;
+      width: 100%;
+      margin: auto;
+    }
+
+    .screen {
+      flex: 1;
+      background-color: black;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 0;
+      position: relative;
+    }
+
+    .screen-content {
+      width: 100%;
+      height: 100%;
+    }
+
+    .screen-content img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .control-panel {
+      width: 120px;
+      background-color: #555;
+      margin-left: 15px;
+      border-radius: 20px;
+      padding: 15px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-custom {
+      width: 100%;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      border-radius: 20px;
+      padding: 10px 0;
+      margin: 10px 0;
+    }
+
+    .indicator {
+      align-self: flex-end;
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      border-radius: 50%;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+
+<div class="tv-frame">
+  <div class="screen">
+    <div class="screen-content">
+      <img src="assets/images/static_tv.gif" alt="GIF animée rétro">
+    </div>
+  </div>
+
+  <div class="control-panel">
+    <button class="btn btn-custom indicator"></button>
+    <button class="btn btn-custom">Resume</button>
+    <button class="btn btn-custom">Projects</button>
+    <button class="btn btn-custom">Links</button>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

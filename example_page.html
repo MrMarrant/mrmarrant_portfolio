@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Retro Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html, body {
+      background-color: #1a1813;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .tv-frame {
+      background-color: #333;
+      border: 20px solid #777;
+      border-radius: 30px;
+      padding: 10px;
+      display: flex;
+      height: 100vh;
+      width: 100%;
+      margin: auto;
+    }
+
+    .screen {
+      flex: 1;
+      background-color: black;
+      border-radius: 10px;
+      overflow-y: scroll;
+      perspective: 1000px;
+      padding: 20px;
+    }
+
+    .screen-content {
+      color: #00ff99;
+      transform-origin: top center;
+      transition: transform 0.1s ease-out;
+    }
+
+    .screen-content h1, .screen-content p {
+      margin-bottom: 2rem;
+    }
+
+    .screen-content img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .control-panel {
+      width: 120px;
+      background-color: #555;
+      margin-left: 15px;
+      border-radius: 20px;
+      padding: 15px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-custom {
+      width: 100%;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      border-radius: 20px;
+      padding: 10px 0;
+      margin: 10px 0;
+    }
+
+    .indicator {
+      align-self: flex-end;
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      border-radius: 50%;
+      background-color: green;
+    }
+
+    /* Hide scrollbar but keep scroll functionality */
+    .screen::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+  </style>
+</head>
+<body>
+
+<div class="tv-frame">
+  <div class="screen" id="screen">
+    <div class="screen-content" id="screenContent">
+      <h1>Bienvenue sur mon terminal 👾</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et quam vitae quam pulvinar dignissim. Donec tempor lacus at tellus convallis, a tincidunt justo vehicula.</p>
+      <img src="https://picsum.photos/800/300" alt="Image test">
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+      <h1>Section 2</h1>
+      <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
+      <img src="https://picsum.photos/700/400" alt="Deuxième image">
+      <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+    </div>
+  </div>
+
+  <div class="control-panel">
+    <button class="btn btn-custom indicator"></button>
+    <button class="btn btn-custom">Resume</button>
+    <button class="btn btn-custom">Projects</button>
+    <button class="btn btn-custom">Links</button>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const screen = document.getElementById('screen');
+  const content = document.getElementById('screenContent');
+
+//   screen.addEventListener('scroll', () => {
+//     const scrollY = screen.scrollTop;
+//     const maxScroll = screen.scrollHeight - screen.clientHeight;
+//     const rotateX = (scrollY / maxScroll) * 20; // max rotation = 20deg
+//     content.style.transform = `rotateX(${rotateX}deg)`;
+//   });
+</script>
+
+</body>
+</html>
