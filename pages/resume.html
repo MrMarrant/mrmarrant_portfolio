@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MrMarrant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="../assets/images/mrmarrant_tv.ico">
+  <style>
+    html, body {
+      background-color: #1a1813;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .tv-frame {
+      background-color: #333;
+      border: 20px solid #777;
+      border-radius: 30px;
+      padding: 10px;
+      display: flex;
+      height: 100vh;
+      width: 100%;
+      margin: auto;
+    }
+
+    .screen {
+      flex: 1;
+      background-color: #fee504;
+      border-radius: 10px;
+      overflow-y: scroll;
+      perspective: 1000px;
+      padding: 20px;
+    }
+
+    .screen-content {
+      color: #313131;
+      transform-origin: top center;
+      transition: transform 0.1s ease-out;
+      font-size: larger;
+    }
+
+    .screen-content h1, .screen-content p {
+      margin-bottom: 2rem;
+    }
+
+    .screen-content img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .control-panel {
+      width: 120px;
+      background-color: #555;
+      margin-left: 15px;
+      border-radius: 20px;
+      padding: 15px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-custom {
+      width: 100%;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      border-radius: 20px;
+      padding: 10px 0;
+      margin: 10px 0;
+    }
+
+    .power {
+      align-self: flex-end;
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      border-radius: 50%;
+      background-color: #03d703;
+    }
+    .power:hover {
+        background-color: #03d703;
+        box-shadow: #00c308 0 -12px 6px inset;
+        transform: scale(1.055);
+    }
+
+    .screen::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+
+    .header-resume {
+      display: flex;
+    }
+
+    .special-link {
+      text-decoration: none;
+      color: #313131;
+    }
+    .special-link:hover {
+      color: #4c00fd;
+    }
+
+    /*Skills CSS*/
+    .skills {
+      justify-items: center;
+      color: rgb(219, 0, 0);
+    }
+    .skill-line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0;
+      font-family: 'Courier New', monospace;
+      flex-wrap: wrap;
+    }
+
+    .skill-name {
+      color: black;
+      font-size: 2em;
+    }
+
+    .square {
+      width: 35px;
+      height: 35px;
+      border: 1px solid #000;
+      background-color: black;
+    }
+
+    .square.white {
+      background-color: white;
+    }
+
+    .skill-score {
+      color: black;
+      font-size: 2em;
+    }
+
+    .skill-score .value {
+      color: rgb(219, 0, 0);
+    }
+  </style>
+</head>
+<body>
+
+<div class="tv-frame">
+  <div class="screen" id="screen">
+    <div class="screen-content" id="screenContent">
+      <img style="margin-bottom: 100px;" src="../assets/images/mrmarrant_face.png" alt="Resume">
+      <div class="header-resume">
+        <img style="width: 20%; height: 20%; margin-right: 20px;" src="../assets/images/mrmarrant_tv.png" alt="Header Resume">
+        <h1 style="align-content: center;">
+          <b>I hope you laughed</b><br>
+          <b style="color: #000000;">Thank you for laughing with us.</b>
+        </h1>
+      </div>
+      <section>
+        <h1>
+          <b>Hey</b>
+        </h1>
+        <p>Let me introduce myself — MrMarrant.<br>
+          Welcome to this show, which will mainly be about... Me.<br><br>
+
+          It might sound a bit self-centered, but I really want to share what I do and what I'm passionate about.<br>
+          Alright, let’s talk about me then.<br>
+          I’m a young adult in good health, passionate about the art of video games.<br><br>
+          
+          Even today, video games are often dismissed as just a way to kill time, or even outright looked down upon.<br>
+          And yet, a game can bring together nearly all existing art forms — from music, cinema, and writing, to even sculpture and painting.</p>
+
+      </section>
+
+      <section style="display: flex;">
+        <div>
+          <h1>
+            <b>What were we talking about again?</b>
+          </h1>
+          <p>Ah yes, about me.<br>
+
+            I started studying medicine, and as life can be quite strange sometimes, I ended up working on the Web by day and modding <a class="special-link" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2956796515">clowns</a> by night.<br><br>
+            
+            Today, I’m a fullstack developer specialized in the web.<br>
+            I’ve worked on quite a few different projects, whether for the army, an aquarium, or a French local department.<br><br>
+            
+            Right now, I’m trying to develop games in my free time — you can find them on the projects page.<br><br>
+            
+            I’m still new to this field and still exploring themes and looking for my own unique signature.<br>
+            Feel free to check out my current posts on Itch.io.<br><br>
+            
+            That’s all for now, thanks for tuning in — and don’t forget to laugh.</p>
+
+        </div>
+        <img style="width: 20%; height: 20%; margin-right: 20px; align-self: center;" src="../assets/images/pablo_face.png" alt="Pablo Face">
+      </section>
+      <section>
+        <h1 style="text-align: center;"><b>Skills</b></h1>
+        <div class="skills">
+          <h3 style="text-align: center;"><b>BackEnd</b></h3>
+          <div id="skills-container-back"></div>
+          <h3 style="text-align: center;"><b>FrontEnd</b></h3>
+          <div id="skills-container-front"></div>
+          <h3 style="text-align: center;"><b>Tools</b></h3>
+          <div id="skills-container-tools"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="control-panel">
+    <button class="btn btn-custom power"></button>
+    <button class="btn btn-custom resume"><a style="color: #004aad;">Resume</a></button>
+    <button class="btn btn-custom projects">Projects</button>
+    <button class="btn btn-custom links">Links</button>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const powerButton = document.querySelector('.power');
+  powerButton.addEventListener('click', function() {
+      window.open('../index.html', "_self");
+  });
+
+  const resumeButton = document.querySelector('.resume');
+  resumeButton.addEventListener('click', function() {
+      window.open('../pages/resume.html', "_self");
+  });
+
+  function displaySkills(name, skill, divName) {
+    if (divName === undefined) divName = "skills-container-back";
+    const container = document.getElementById(divName);
+
+    const line = document.createElement("div");
+    line.className = "skill-line";
+
+    const nameEl = document.createElement("div");
+    nameEl.className = "skill-name";
+    nameEl.textContent = name;
+    line.appendChild(nameEl);
+
+    for (let i = 0; i < 10; i++) {
+      const square = document.createElement("div");
+      square.className = "square";
+      if (i < skill) {
+        square.classList.add("white");
+      }
+      line.appendChild(square);
+    }
+
+    const score = document.createElement("div");
+    score.className = "skill-score";
+    score.innerHTML = `[<span class="value">${skill}</span>/10]`;
+    line.appendChild(score);
+
+    container.appendChild(line);
+    }
+
+    displaySkills("PHP", 7);
+    displaySkills("NodeJS", 6);
+    displaySkills("CSS", 8, "skills-container-front");
+    displaySkills("HTML", 8, "skills-container-front");
+    displaySkills("Boostrap", 7, "skills-container-front");
+    displaySkills("Git", 9, "skills-container-tools");
+    displaySkills("Lua", 8);
+    displaySkills("Twig", 8, "skills-container-front");
+    displaySkills("JavaScript", 7, "skills-container-front");
+    displaySkills("SQL", 8);
+    displaySkills("Dart/Flutter", 6);
+    displaySkills("Docker", 5, "skills-container-tools");
+    displaySkills("MySQL", 8, "skills-container-tools");
+    displaySkills("PostgreSQL", 7, "skills-container-tools");
+    displaySkills("Unreal Engine", 6, "skills-container-tools");
+    displaySkills("Blender", 5, "skills-container-tools");
+</script>
+
+</body>
+</html>
