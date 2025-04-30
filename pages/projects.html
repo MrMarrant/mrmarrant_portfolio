@@ -46,12 +46,6 @@
       margin-bottom: 2rem;
     }
 
-    .screen-content img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-bottom: 2rem;
-    }
-
     .control-panel {
       width: 120px;
       background-color: #555;
@@ -111,6 +105,29 @@
       border-radius: 10px;
       margin-bottom: 100px;
     }
+
+    .project-content {
+      background-color: #e0e0e0;
+      padding: 3vh;
+      margin: 1vh;
+    }
+    .project-content:hover {
+      background-color: #b60404;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: scale(1.01);
+      transition: transform 0.2s ease-in-out;
+      cursor: pointer;
+    }
+
+    .img-project {
+      max-width: 20vh;
+      padding: 2vh;
+    }
+
+    .img-tech {
+      max-width: 10vh;
+      padding: 1vh;
+    }
   </style>
 </head>
 <body>
@@ -119,21 +136,7 @@
   <div class="screen" id="screen">
     <div class="screen-content" id="screenContent">
       <img class="header-image" src="../assets/images/projects.png" alt="Resume">
-
-      <section class="projects">
-        <div class="card mb-3">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="../assets/images/goodbye_art.png" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">GoodBye Art</h5>
-                <p class="card-text">An horror game based on a famous artist </p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section id="projects-list" class="projects-list">
       </section>
     </div>
   </div>
@@ -150,5 +153,8 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../default.js"></script>
+<script>
+  addProjectCard("../assets/images/goodbye_art.png", "../assets/images/unreal_logo.png", "Goodbye Art", "Horror game based on a famous artist", "google.com")
+</script>
 </body>
 </html>

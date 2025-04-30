@@ -46,3 +46,46 @@ function displaySkills(name, skill, divName) {
 
   container.appendChild(line);
   }
+
+  function addProjectCard(imgProject, imgTech, projectName, projectDescription, url) {
+    const projectDiv = document.createElement('div');
+    projectDiv.className = 'project-content w-100 d-flex justify-content-between align-items-center';
+    projectDiv.addEventListener('click', function() {
+      window.open(url, "_self");
+  });
+  
+    const imgProjectElement = document.createElement('img');
+    imgProjectElement.src = imgProject;
+    imgProjectElement.alt = 'Image project';
+    imgProjectElement.className = 'img-project';
+  
+    const textDiv = document.createElement('div');
+    textDiv.className = 'text-center';
+  
+    const title = document.createElement('h1');
+    title.className = 'fw-bold mb-1';
+    title.textContent = projectName;
+  
+    const description = document.createElement('p');
+    description.className = 'mb-0';
+    description.textContent = projectDescription;
+  
+    textDiv.appendChild(title);
+    textDiv.appendChild(description);
+  
+    const imgTechElement = document.createElement('img');
+    imgTechElement.src = imgTech;
+    imgTechElement.alt = 'Image Tech';
+    imgTechElement.className = 'img-tech';
+  
+    projectDiv.appendChild(imgProjectElement);
+    projectDiv.appendChild(textDiv);
+    projectDiv.appendChild(imgTechElement);
+  
+    const section = document.getElementById('projects-list');
+    if (section) {
+      section.appendChild(projectDiv);
+    } else {
+      console.error("No projects section found.");
+    }
+  }
