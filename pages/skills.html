@@ -61,6 +61,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      border: 5px solid;
     }
 
     .btn-custom {
@@ -105,7 +106,7 @@
     }
 
     /*Skills CSS*/
-    .skills {
+    .skills-container {
       justify-items: center;
       color: rgb(219, 0, 0);
     }
@@ -158,8 +159,8 @@
   <div class="screen" id="screen">
     <div class="screen-content" id="screenContent">
       <img class="header-image" style="margin-bottom: 100px;" src="../assets/images/skills.png" alt="Skills">
-      <section>
-        <div class="skills">
+      <section id="skills-list" class="skills-list">
+        <div class="skills-container">
           <h3 style="text-align: center;"><b>BackEnd</b></h3>
           <div id="skills-container-back"></div>
           <h3 style="text-align: center;"><b>FrontEnd</b></h3>
