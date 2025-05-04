@@ -23,6 +23,11 @@ linksButton.addEventListener('click', function() {
     window.open('../pages/links.html', "_self");
 });
 
+const creationsButton = document.querySelector('.creations');
+creationsButton.addEventListener('click', function() {
+    window.open('../pages/creations.html', "_self");
+});
+
 function displaySkills(name, skill, divName) {
   if (divName === undefined) divName = "skills-container-back";
   const container = document.getElementById(divName);

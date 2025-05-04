@@ -28,7 +28,7 @@
 
     .screen {
       flex: 1;
-      background-color: #000000;
+      background-color: #070707;
       border-radius: 10px;
       overflow-y: scroll;
       perspective: 1000px;
@@ -36,19 +36,13 @@
     }
 
     .screen-content {
-      color: #ebebeb;
+      color: #313131;
       transform-origin: top center;
       transition: transform 0.1s ease-out;
       font-size: larger;
     }
 
     .screen-content h1, .screen-content p {
-      margin-bottom: 2rem;
-    }
-
-    .screen-content img {
-      max-width: 100%;
-      border-radius: 10px;
       margin-bottom: 2rem;
     }
 
@@ -67,7 +61,7 @@
     .btn-custom {
       width: 100%;
       background-color: black;
-      color: #ebebeb;
+      color: white;
       font-weight: bold;
       border-radius: 20px;
       padding: 10px 0;
@@ -109,51 +103,46 @@
       color: #4c00fd;
     }
 
-    /*Skills CSS*/
-    .skills-container {
-      justify-items: center;
-      color: rgb(219, 0, 0);
-    }
-    .skill-line {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 10px 0;
-      font-family: 'Courier New', monospace;
-      flex-wrap: wrap;
-    }
-
-    .skill-name {
-      color: #ebebeb;
-      font-size: 2em;
-    }
-
-    .square {
-      width: 35px;
-      height: 35px;
-      border: 1px solid #ffffff;
-      background-color: black;
-    }
-
-    .square.white {
-      background-color: white;
-    }
-
-    .skill-score {
-      color: #ebebeb;
-      font-size: 2em;
-    }
-
-    .skill-score .value {
-      color: rgb(219, 0, 0);
-    }
-
     .header-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 10px;
       margin-bottom: 100px;
+    }
+
+    .img-project {
+      max-width: 40vh;
+      max-height: 40vh;
+      padding: 2vh;
+    }
+
+    .grid-item {
+      max-width: 20vh;
+      height: 20vh;
+      padding: 3vh;
+      border-radius: 2px;
+      background-color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .grid-item img {
+      max-width: 100%;
+      max-height: 100%;
+      padding: 2vh;
+      object-fit: contain;
+    }
+    .link-card:hover {
+      background-color: #d8db00;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: scale(1.02);
+      transition: transform 0.2s ease-in-out;
+      cursor: pointer;
+    }
+    .links-container {
+      width: 70%;
     }
   </style>
 </head>
@@ -162,16 +151,8 @@
 <div class="tv-frame">
   <div class="screen" id="screen">
     <div class="screen-content" id="screenContent">
-      <img class="header-image" style="margin-bottom: 100px;" src="../assets/images/skills.png" alt="Skills">
-      <section id="skills-list" class="skills-list">
-        <div class="skills-container">
-          <h3 style="text-align: center;"><b>BackEnd</b></h3>
-          <div id="skills-container-back"></div>
-          <h3 style="text-align: center;"><b>FrontEnd</b></h3>
-          <div id="skills-container-front"></div>
-          <h3 style="text-align: center;"><b>Tools</b></h3>
-          <div id="skills-container-tools"></div>
-        </div>
+      <img class="header-image" src="../assets/images/lookdown_banner.png" alt="Creations">
+      <section>
       </section>
     </div>
   </div>
@@ -179,34 +160,16 @@
   <div class="control-panel">
     <button class="btn btn-custom power"></button>
     <button class="btn btn-custom resume">Resume</button>
-    <button class="btn btn-custom skills"><a style="color: #004aad;">Skills</a></button>
+    <button class="btn btn-custom skills">Skills</button>
     <button class="btn btn-custom projects">Projects</button>
-    <button class="btn btn-custom creations">Creations</button>
+    <button class="btn btn-custom creations"><a style="color: #004aad;">Creations</a></button>
     <button class="btn btn-custom links">Links</button>
   </div>
 </div>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../default.js"></script>
 <script>
-  displaySkills("PHP", 7);
-  displaySkills("NodeJS", 6);
-  displaySkills("CSS", 8, "skills-container-front");
-  displaySkills("HTML", 8, "skills-container-front");
-  displaySkills("Boostrap", 7, "skills-container-front");
-  displaySkills("Git", 9, "skills-container-tools");
-  displaySkills("Lua", 8);
-  displaySkills("Twig", 8, "skills-container-front");
-  displaySkills("JavaScript", 7, "skills-container-front");
-  displaySkills("SQL", 8);
-  displaySkills("Dart/Flutter", 6);
-  displaySkills("Docker", 5, "skills-container-tools");
-  displaySkills("MySQL", 8, "skills-container-tools");
-  displaySkills("PostgreSQL", 7, "skills-container-tools");
-  displaySkills("Unreal Engine", 6, "skills-container-tools");
-  displaySkills("Blender", 5, "skills-container-tools");
 </script>
-
 </body>
 </html>
