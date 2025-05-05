@@ -51,9 +51,19 @@ body {
     border: 5px solid;
 }
 
+#button-control-panel {
+    display: none;
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+}
+
 @media screen and (max-width: 600px) {
     .control-panel {
         display: none;
+    }
+    #button-control-panel {
+        display: block;
     }
 }
 

@@ -28,6 +28,11 @@ creationsButton.addEventListener('click', function() {
     window.open('../pages/creations.html', "_self");
 });
 
+const controlPanelButton = document.getElementById('button-control-panel');
+controlPanelButton.addEventListener('click', function() {
+  OpenControlPanel();
+});
+
 function displaySkills(name, skill, divName) {
   if (divName === undefined) divName = "skills-container-back";
   const container = document.getElementById(divName);
@@ -122,5 +127,16 @@ function addLinksCard(imgLink, url)
     section.appendChild(linkDiv);
   } else {
     console.error("No links section found.");
+  }
+}
+
+function OpenControlPanel()
+{
+  const controlPanel = document.querySelector('.control-panel');
+  console.log(controlPanel.style.display);
+  if (controlPanel.style.display == "none" || !controlPanel.style.display) {
+    controlPanel.style.display = "block";
+  } else {
+    controlPanel.style.display = "none";
   }
 }
