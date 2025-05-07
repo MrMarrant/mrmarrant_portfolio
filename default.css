@@ -23,7 +23,6 @@ body {
     background-color: #070707;
     border-radius: 10px;
     overflow-y: scroll;
-    perspective: 1000px;
     padding: 20px;
 }
 

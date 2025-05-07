@@ -26,6 +26,34 @@
       margin: 10px 0;
     }
 
+    .img-creations:hover {
+      transform: scale(1.05);
+      transition: transform 0.1s ease-in-out;
+      cursor: pointer;
+    }
+
+    .zoom-image {
+      width: 50%;
+      max-height: 90%;
+    }
+
+    .zoom-container {
+      position: fixed;
+      position-area: center;
+      pointer-events: none;
+      background-color: #000000cc;
+      width: 100%;
+      height: 100%;
+      align-content: center;
+      text-align: center;
+      display: none;
+    }
+
+    #close-zoom {
+      position: fixed;
+      margin-left: 20px;
+    }
+
     .text-header {
       color: #ffffff;
     }
@@ -36,41 +64,42 @@
 <div class="tv-frame">
   <div class="screen" id="screen">
     <button id="button-control-panel" type="button" class="btn btn-dark">|||</button>
+    <div id="zoom-container" class="zoom-container">
+      <img id="zoom-image" class="zoom-image" src="../assets/creations/tired.png" alt="Zoom Image">
+      <button id="close-zoom" class="btn btn-dark" onclick="CloseImageZoom()">X</button>
+    </div>
     <div class="screen-content" id="screenContent">
       <img class="header-image" src="../assets/images/lookdown_banner.png" alt="Creations">
       <section>
         <p class="text-header">Here's a list of images and elements I've created and used for various addons and games.</p>
         <div class="row creations-content">
           <div class="col-12">
-            <img class="img-creations" src="../assets/creations/1025_logo.gif" alt="Creations">
-            <img class="img-creations" src="../assets/creations/ARTSISTERROR.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/brochure_01.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/brochure_02.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/dream_room.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/Real_Garbage_Description_1.gif" alt="Creations">
-            <img class="img-creations" src="../assets/creations/SCP-035.gif" alt="Creations">
-            <img class="img-creations" src="../assets/creations/fiction_exposition.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/yux_corrupt.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/warning_gravity_sign.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/tired.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/scp235_img1.gif" alt="Creations">
-            <img class="img-creations" src="../assets/creations/save_data.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/post_bunker_01.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/post_bunker_02.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/post_bunker_03.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/post_bunker_04.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/header_035.gif" alt="Creations">
-            <img class="img-creations" src="../assets/creations/lookdown_logo.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/moon_exposition.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/pdp.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/mpnttroi_logo.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/isy.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/logo_eric.png" alt="Creations">
-            <img class="img-creations" src="../assets/creations/header_itch_io.gif" alt="Creations">
-            <img class="img-creations" src="../assets/creations/lookdown_min.png" alt="Creations">
-            
-            
-
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/1025_logo.gif" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/ARTSISTERROR.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/brochure_01.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/brochure_02.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/dream_room.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/Real_Garbage_Description_1.gif" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/SCP-035.gif" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/fiction_exposition.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/yux_corrupt.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/warning_gravity_sign.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/tired.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/scp235_img1.gif" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/save_data.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/post_bunker_01.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/post_bunker_02.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/post_bunker_03.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/post_bunker_04.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/header_035.gif" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/lookdown_logo.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/moon_exposition.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/pdp.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/mpnttroi_logo.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/isy.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/logo_eric.png" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/header_itch_io.gif" alt="Creations">
+            <img class="img-creations" onclick="ZoomImageCreation(this)" src="../assets/creations/lookdown_min.png" alt="Creations">
           </div>
         </div>
       </section>
@@ -91,6 +120,20 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../default.js"></script>
 <script>
+  function ZoomImageCreation(img) {
+    const zoomImg = document.getElementById("zoom-image");
+    const zoomContainer = document.getElementById("zoom-container");
+    zoomImg.src = img.src;
+    zoomContainer.style.display = "inherit";
+    zoomContainer.style.pointerEvents = "all";
+  }
+
+  function CloseImageZoom() {
+    const zoomContainer = document.getElementById("zoom-container");
+    const screenContent = document.getElementById("screenContent");
+    zoomContainer.style.display = "none";
+    zoomContainer.style.pointerEvents = "none";
+  }
 </script>
 </body>
 </html>
