@@ -63,6 +63,18 @@
       window.open('pages/resume.html', "_self");
   });
 
+  let blinkPowerButton = true;
+
+  BlinkButton();
+
+  function BlinkButton() {
+    powerButton.style.backgroundColor = blinkPowerButton && "#03d703" || "#002e00";
+    blinkPowerButton = !blinkPowerButton;
+    setTimeout(() => {
+      BlinkButton();
+    }, 1000);
+  }
+
   function OpenControlPanel()
   {
     const controlPanel = document.querySelector('.control-panel');

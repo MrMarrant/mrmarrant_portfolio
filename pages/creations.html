@@ -57,6 +57,11 @@
     .text-header {
       color: #ffffff;
     }
+
+    .img-creations.no-hover:hover {
+      transform: none;
+      cursor: default;
+    }
   </style>
 </head>
 <body>
@@ -126,6 +131,12 @@
     zoomImg.src = img.src;
     zoomContainer.style.display = "inherit";
     zoomContainer.style.pointerEvents = "all";
+
+    // Disable hover effect on the image for a short time
+    img.classList.add("no-hover");
+    setTimeout(() => {
+      img.classList.remove("no-hover");
+    }, 500);
   }
 
   function CloseImageZoom() {
