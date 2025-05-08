@@ -92,6 +92,7 @@ body {
 
 .power:hover {
     transform: scale(1.055);
+    background-color: #03d703;
 }
 
 .screen::-webkit-scrollbar {
