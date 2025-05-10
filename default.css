@@ -53,9 +53,6 @@ body {
 #button-control-panel {
     display: none;
     position: absolute;
-    right: 0;
-    margin-right: 10px;
-    margin-top: 10px;
 }
 
 @media screen and (max-width: 600px) {
@@ -111,3 +108,7 @@ body {
     border-radius: 10px;
     margin-bottom: 100px;
 }
+
+.text-header {
+    color: #ffffff;
+  }

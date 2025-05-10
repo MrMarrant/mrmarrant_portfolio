@@ -27,9 +27,8 @@
     }
 
     .img-creations:hover {
-      transform: scale(1.05);
-      transition: transform 0.1s ease-in-out;
       cursor: pointer;
+      border: 2px solid #adc000;
     }
 
     .zoom-image {
@@ -52,10 +51,6 @@
     #close-zoom {
       position: fixed;
       margin-left: 20px;
-    }
-
-    .text-header {
-      color: #ffffff;
     }
 
     .img-creations.no-hover:hover {
@@ -131,17 +126,10 @@
     zoomImg.src = img.src;
     zoomContainer.style.display = "inherit";
     zoomContainer.style.pointerEvents = "all";
-
-    // Disable hover effect on the image for a short time
-    img.classList.add("no-hover");
-    setTimeout(() => {
-      img.classList.remove("no-hover");
-    }, 500);
   }
 
   function CloseImageZoom() {
     const zoomContainer = document.getElementById("zoom-container");
-    const screenContent = document.getElementById("screenContent");
     zoomContainer.style.display = "none";
     zoomContainer.style.pointerEvents = "none";
   }
