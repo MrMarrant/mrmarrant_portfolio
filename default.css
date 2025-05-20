@@ -24,6 +24,7 @@ body {
     border-radius: 10px;
     overflow-y: scroll;
     padding: 20px;
+    filter: drop-shadow(0 0 2em #292929cc) drop-shadow(0 0 2em #dadadacc);
 }
 
 .screen-content {
